@@ -22,4 +22,31 @@ public class FormularioDatos {
 		return cliente;
 	}
 	
+	public static String pedirDniCliente(Scanner scan) {
+		
+		String dni;
+		Visor.mostrarMensaje("Introduce el DNI del cliente");
+		dni = scan.nextLine();
+		
+		return dni;
+	}
+	
+	public static Cliente modificarDatosCliente(Scanner scan) {
+		
+		Cliente modCliente = new Cliente();
+		
+		System.out.println("Inserta el nuevo DNI del cliente");
+		modCliente.setDni(scan.nextLine());
+		System.out.println("Inserta el nuevo nombre dle cliente");
+		modCliente.setNombre(scan.nextLine());
+		System.out.println("Inserta el nuevo apellido del cliente");
+		modCliente.setApellido(scan.nextLine());
+		System.out.println("Introduce la nueva dirección del cliente");
+		modCliente.setDireccion(scan.nextLine());
+		System.out.println("Introduce la nueva localidad del cliente");
+		modCliente.setLocalidad(scan.nextLine());
+		
+		return modCliente;
+		
+	}
 }

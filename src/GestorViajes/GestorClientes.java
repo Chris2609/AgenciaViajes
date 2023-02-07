@@ -1,5 +1,6 @@
 package GestorViajes;
 
+import java.text.Normalizer.Form;
 import java.util.Scanner;
 
 public class GestorClientes {
@@ -28,7 +29,20 @@ public class GestorClientes {
 				
 			case Menu.BAJA_CLIENTE:
 				
+				String dniC = FormularioDatos.pedirDniCliente(scan);
+				GestorBBDD bajaCliente = new GestorBBDD();
+				bajaCliente.eliminarCliente(dniC);
 				
+				Visor.mostrarMensaje("\nCliente dado de baja\n");
+				
+				break;
+				
+			case Menu.MODIFICAR_CLIENTE:
+				
+				GestorBBDD modificarCliente = new GestorBBDD();
+				modificarCliente.modificarCliente(FormularioDatos.pedirDniCliente(scan), FormularioDatos.modificarDatosCliente(scan));
+				
+				Visor.mostrarMensaje("\nCliente modificado\n");
 				
 				break;
 		
