@@ -24,6 +24,12 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 
+        try {
+			con.cerrarConexion();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+        
 	}
 	
 }
