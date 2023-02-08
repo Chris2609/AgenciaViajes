@@ -26,4 +26,10 @@ public class Menu {
 
 	public static final int ALTA_HOTEL = 1;
 	
+	public static void menuHabitacion() {
+		System.out.println("1. Añadir habitación\n0. Salir");
+	}
+	
+	public static final int INSERTAR_HABITACION = 1;
+	
 }
