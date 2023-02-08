@@ -45,6 +45,12 @@ public class GestorClientes {
 				Visor.mostrarMensaje("\nCliente modificado\n");
 				
 				break;
+				
+			case Menu.SALIR:
+				
+				Visor.mostrarMensaje("\nVolviendo...\n");
+				
+				break;
 		
 		}
 		}while(opcion != 0);

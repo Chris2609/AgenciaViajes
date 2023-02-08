@@ -19,5 +19,11 @@ public class Menu {
 	public static final int INSERTAR_CLIENTE = 1;
 	public static final int BAJA_CLIENTE = 2;
 	public static final int MODIFICAR_CLIENTE = 3;
+	
+	public static void menuGestionHotel() {
+		System.out.println("1. Álta de hotel\n0. Salir");
+	}
 
+	public static final int ALTA_HOTEL = 1;
+	
 }

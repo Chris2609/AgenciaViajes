@@ -10,7 +10,7 @@ public class FormularioDatos {
 		
 		System.out.println("Inserta el DNI del cliente");
 		cliente.setDni(scan.nextLine());
-		System.out.println("Inserta el nombre dle cliente");
+		System.out.println("Inserta el nombre dee cliente");
 		cliente.setNombre(scan.nextLine());
 		System.out.println("Inserta el apellido del cliente");
 		cliente.setApellido(scan.nextLine());
@@ -37,7 +37,7 @@ public class FormularioDatos {
 		
 		System.out.println("Inserta el nuevo DNI del cliente");
 		modCliente.setDni(scan.nextLine());
-		System.out.println("Inserta el nuevo nombre dle cliente");
+		System.out.println("Inserta el nuevo nombre del cliente");
 		modCliente.setNombre(scan.nextLine());
 		System.out.println("Inserta el nuevo apellido del cliente");
 		modCliente.setApellido(scan.nextLine());
@@ -47,6 +47,24 @@ public class FormularioDatos {
 		modCliente.setLocalidad(scan.nextLine());
 		
 		return modCliente;
-		
 	}
+	
+	public static Hotel altaHotel(Scanner scan) {
+		
+		Hotel hotel = new Hotel();
+		
+		System.out.println("Introduce el CIF del hotel");
+		hotel.setCif(scan.nextLine());
+		System.out.println("Introduce el nombre del hotel");
+		hotel.setNombre(scan.nextLine());
+		System.out.println("Introduce el nombre del gerente del hotel");
+		hotel.setGerente(scan.nextLine());
+		System.out.println("Introduce la cantidad de estrellas del hotel");
+		hotel.setEstrellas(Integer.parseInt(scan.nextLine()));
+		System.out.println("Introduce el nombre de la compañía a la que pertenece");
+		hotel.setCompañia(scan.nextLine());
+		
+		return hotel;
+	}
+	
 }

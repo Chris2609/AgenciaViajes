@@ -19,9 +19,23 @@ public class GestorAgencia {
     			GestorClientes.run(scan);
     			
     			break;
+    			
     		
+    			
+    		case Menu.GESTIONAR_HOTEL:
+    			
+    			GestorHotel.run(scan);
+    		
+    			break;
+    		
+    		case Menu.SALIR:
+    			
+    			Visor.mostrarMensaje("\n¡ADIOS!\n");
+    			
+    			break;
+    			
     		}
-    		
+    		   		
     	}while(opcion != 0);
     }
 	
