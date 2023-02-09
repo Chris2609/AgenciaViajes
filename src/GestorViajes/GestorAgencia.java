@@ -20,7 +20,11 @@ public class GestorAgencia {
     			
     			break;
     			
-    		
+    		case Menu.GESTIONAR_RESERVAS:
+    			
+    			
+    			
+    			break;
     			
     		case Menu.GESTIONAR_HOTEL:
     			
