@@ -15,8 +15,7 @@ public class GestorHotel {
 			
 			switch(opcion) {
 			
-			case Menu.ALTA_HOTEL:
-				
+			case Menu.ALTA_HOTEL:				
 				
 				Hotel hotel = new Hotel();
 				hotel = FormularioDatos.altaHotel(scan);

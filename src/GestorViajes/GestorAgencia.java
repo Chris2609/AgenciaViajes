@@ -22,7 +22,7 @@ public class GestorAgencia {
     			
     		case Menu.GESTIONAR_RESERVAS:
     			
-    			
+    			GestorReservas.run(scan);
     			
     			break;
     			
