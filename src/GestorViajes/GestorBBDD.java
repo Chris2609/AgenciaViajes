@@ -87,8 +87,27 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 	
-
-		
 	}
+
+	
+	public void insertarHabitacion(Habitacion habitacion) {
+		
+		try {
+			con.conectar();
+		
+			PreparedStatement insertarHabi = con.getConexion().prepareStatement("INSERT INTO habitaciones VALUES (?,?,?,?,?)");
+			insertarHabi.setInt(1, habitacion.getId());
+			insertarHabi.setInt(2, habitacion.getId_hotel());
+			insertarHabi.setString(3, habitacion.getNumero());
+			insertarHabi.setString(4, habitacion.getDescripcion());
+			insertarHabi.setDouble(5, habitacion.getPrecio());
+			
+			insertarHabi.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+		}
 	
 }

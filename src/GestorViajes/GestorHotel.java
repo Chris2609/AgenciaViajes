@@ -22,11 +22,18 @@ public class GestorHotel {
 				GestorBBDD altaH = new GestorBBDD();
 				altaH.insertarHotel(hotel);
 				
+				Menu.menuHabitacion();
+				opcion = Integer.parseInt(scan.nextLine());
+				
+				if(opcion == 1) {
+					Habitacion habitacion = new Habitacion();
+					habitacion = FormularioDatos.pedirDatosH(scan, hotel);
+					GestorBBDD insHabitacion = new GestorBBDD();
+					insHabitacion.insertarHabitacion(habitacion);
+				}
 				
 				break;
 				
-				
-			
 			case Menu.SALIR:
 				
 				Visor.mostrarMensaje("\nVolviendo...\n");
