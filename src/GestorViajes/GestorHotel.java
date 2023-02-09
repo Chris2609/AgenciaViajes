@@ -17,20 +17,35 @@ public class GestorHotel {
 			
 			case Menu.ALTA_HOTEL:
 				
+				
 				Hotel hotel = new Hotel();
 				hotel = FormularioDatos.altaHotel(scan);
 				GestorBBDD altaH = new GestorBBDD();
 				altaH.insertarHotel(hotel);
 				
-				Menu.menuHabitacion();
-				opcion = Integer.parseInt(scan.nextLine());
+				Visor.mostrarMensaje("\nHotel insertado, ¿quieres añadir una habitación?\n");
 				
-				if(opcion == 1) {
+				int opcion2;
+				do {
+				Menu.menuHabitacion();
+				opcion2 = Integer.parseInt(scan.nextLine());
+				
+				if(opcion2 == Menu.INSERTAR_HABITACION) {
 					Habitacion habitacion = new Habitacion();
-					habitacion = FormularioDatos.pedirDatosH(scan, hotel);
+					habitacion = FormularioDatos.pedirDatosH(scan);
 					GestorBBDD insHabitacion = new GestorBBDD();
 					insHabitacion.insertarHabitacion(habitacion);
 				}
+				}while(opcion2 != 0);
+
+				break;
+				
+			case Menu.AÑA_HABITACION:
+		
+				Habitacion habitacion = new Habitacion();
+				habitacion = FormularioDatos.pedirDatosH(scan);
+				GestorBBDD insHabitacion = new GestorBBDD();
+				insHabitacion.insertarHabitacion(habitacion);
 				
 				break;
 				

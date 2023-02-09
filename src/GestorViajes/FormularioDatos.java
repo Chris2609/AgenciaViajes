@@ -67,13 +67,14 @@ public class FormularioDatos {
 		return hotel;
 	}
 	
-	public static Habitacion pedirDatosH(Scanner scan, Hotel hotel) {
+	public static Habitacion pedirDatosH(Scanner scan) {
 		
 		Habitacion habitacion = new Habitacion();
 		
 		System.out.println("Introduce el ID de la habitacion");
 		habitacion.setId(Integer.parseInt(scan.nextLine()));
-		habitacion.setId_hotel(hotel.getId());
+		System.out.println("Introduce el ID del hotel al que pertenece la habitacion");
+		habitacion.setId_hotel(Integer.parseInt(scan.nextLine()));
 		System.out.println("Introduce el número de habitacion");
 		habitacion.setNumero(scan.nextLine());
 		System.out.println("Introduce una descripción de la habitación");
