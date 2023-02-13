@@ -1,5 +1,6 @@
 package GestorViajes;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GestorReservas {
@@ -17,7 +18,15 @@ public class GestorReservas {
 			
 			case Menu.REALIZAR_RESERVA:
 
-				
+				String dniC = FormularioDatos.pedirDniCliente(scan);
+				GestorBBDD comprobardni = new GestorBBDD();
+				ArrayList dnisbbdd = comprobardni.comprobarDNI();
+				boolean existe = dnisbbdd.contains(dniC);
+				if (existe) {
+					System.out.println("El cliente existe, continuando...");
+				} else {
+					System.out.println("ERROR, el cliente no existe");
+				}
 				
 			break;
 			

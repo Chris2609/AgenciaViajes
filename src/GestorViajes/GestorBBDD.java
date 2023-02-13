@@ -1,7 +1,9 @@
 package GestorViajes;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class GestorBBDD {
 
@@ -109,5 +111,25 @@ public class GestorBBDD {
 		}
 	
 		}
+	
+	public ArrayList comprobarDNI() {
+		
+		con.conectar();
+		ArrayList dnis = new ArrayList();
+		try {
+			PreparedStatement comprobarDNI = con.getConexion().prepareStatement("SELECT dni FROM clientes");
+			comprobarDNI.execute();
+			ResultSet dnibbdd =comprobarDNI.executeQuery();
+			
+			while(dnibbdd.next()) {
+				dnis.add(dnibbdd.getString("dni"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return dnis;
+	}
 	
 }

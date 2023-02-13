@@ -28,7 +28,7 @@ public class GestorClientes {
 				break;
 				
 			case Menu.BAJA_CLIENTE:
-				
+		
 				String dniC = FormularioDatos.pedirDniCliente(scan);
 				GestorBBDD bajaCliente = new GestorBBDD();
 				bajaCliente.eliminarCliente(dniC);

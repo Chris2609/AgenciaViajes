@@ -84,15 +84,7 @@ public class FormularioDatos {
 		
 		return habitacion;
 	}
+		
 	
-	public static Reserva pedirDatosR(Scanner scan) {
-		
-		Reserva reserva = new Reserva();
-		
-		System.out.println("Introduce un DNI de cliente");
-		reserva.setId_habitacion(Integer.parseInt(scan.nextLine()));
-		
-		
-		return null;
-	}
+	
 }
