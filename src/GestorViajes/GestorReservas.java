@@ -19,13 +19,15 @@ public class GestorReservas {
 			case Menu.REALIZAR_RESERVA:
 
 				String dniC = FormularioDatos.pedirDniCliente(scan);
-				GestorBBDD comprobardni = new GestorBBDD();
-				ArrayList dnisbbdd = comprobardni.comprobarDNI();
+				GestorBBDD comprobar = new GestorBBDD();
+				ArrayList dnisbbdd = comprobar.comprobarDNI();
 				boolean existe = dnisbbdd.contains(dniC);
-				if (existe) {
-					System.out.println("El cliente existe, continuando...");
+				if (existe == true) {
+					System.out.println("\nEl cliente existe, continuando...\n");
+					
 				} else {
-					System.out.println("ERROR, el cliente no existe");
+					System.out.println("\nERROR, el cliente no existe, volviendo...\n");
+					break;
 				}
 				
 			break;
