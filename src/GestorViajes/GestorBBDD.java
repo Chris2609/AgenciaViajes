@@ -1,5 +1,6 @@
 package GestorViajes;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -132,4 +133,51 @@ public class GestorBBDD {
 		return dnis;
 	}
 	
+	public ArrayList<Habitacion> habitacionesHotel(int idHotel) {
+		con.conectar();
+		ArrayList<Habitacion> habitaciones = new ArrayList<Habitacion>();
+
+		try {
+			PreparedStatement habitacionesHotel = con.getConexion().prepareStatement("SELECT * FROM habitaciones WHERE id_hotel = ?");
+			habitacionesHotel.setInt(1, idHotel);
+			habitacionesHotel.execute();
+			
+			ResultSet resultado = habitacionesHotel.executeQuery();
+			
+			while(resultado.next()) {
+				Habitacion habitacion = new Habitacion();
+				habitacion.setId(resultado.getInt("id"));
+				habitacion.setId_hotel(resultado.getInt("id_hotel"));
+				habitacion.setNumero(resultado.getString("numero"));
+				habitacion.setDescripcion(resultado.getString("descripcion"));
+				habitacion.setPrecio(resultado.getDouble("precio"));
+				
+				habitaciones.add(habitacion);
+			}
+			
+			con.cerrarConexion();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return habitaciones;
+	}
+	
+	public void insertarReserva(Reserva reserva) {
+		
+		con.conectar();
+		
+		try {
+			PreparedStatement insReserv = con.getConexion().prepareStatement("INSERT INTO reservas (id_habitacion, dni, desde, hasta) VALUES (?, ?, ?, ?)");
+			insReserv.setInt(1, reserva.getId_habitacion());
+			insReserv.setString(2, reserva.getDni());
+			insReserv.setDate(3, (Date) reserva.getDesde());
+			insReserv.setDate(4, (Date) reserva.getHasta());
+			
+			insReserv.execute();
+			con.cerrarConexion();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

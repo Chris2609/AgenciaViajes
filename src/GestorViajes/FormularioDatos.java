@@ -85,6 +85,19 @@ public class FormularioDatos {
 		return habitacion;
 	}
 		
-	
+	public static Reserva pedirDatosR(Scanner scan, String dniC) {
+		
+		Reserva reserva = new Reserva();
+		
+		System.out.println("Introduce el ID de la habitacion a reservar");
+		reserva.setId_habitacion(Integer.parseInt(scan.nextLine()));
+		reserva.setDni(dniC);
+		System.out.println("Introduce una fecha de inicio (YYYY-MM-dd)");
+		reserva.setDesde(java.sql.Date.valueOf(scan.nextLine()));
+		System.out.println("Introduce la fecha de finalización (YYYY-MM-dd)");
+		reserva.setHasta(java.sql.Date.valueOf(scan.nextLine()));
+		
+		return reserva;
+	}
 	
 }

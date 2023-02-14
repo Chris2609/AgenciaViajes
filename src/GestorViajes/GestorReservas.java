@@ -24,7 +24,15 @@ public class GestorReservas {
 				boolean existe = dnisbbdd.contains(dniC);
 				if (existe == true) {
 					System.out.println("\nEl cliente existe, continuando...\n");
+					Visor.mostrarMensaje("Introduce el ID del hotel");
+					int idHotel = Integer.parseInt(scan.nextLine());
+					ArrayList<Habitacion> habitaciones = comprobar.habitacionesHotel(idHotel);
+					Visor.mostrarHabitaciones(habitaciones);
 					
+					Reserva reserva = FormularioDatos.pedirDatosR(scan, dniC);
+					comprobar.insertarReserva(reserva);
+					
+					Visor.mostrarMensaje("\nReserva realizada\n");
 				} else {
 					System.out.println("\nERROR, el cliente no existe, volviendo...\n");
 					break;
