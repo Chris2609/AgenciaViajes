@@ -40,6 +40,11 @@ public class GestorReservas {
 				
 			break;
 			
+			case Menu.ANULAR_RESERVA:
+				
+				
+				
+				break;
 			
 			case Menu.SALIR:
 				

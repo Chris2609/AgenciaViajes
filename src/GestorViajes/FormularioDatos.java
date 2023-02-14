@@ -100,4 +100,9 @@ public class FormularioDatos {
 		return reserva;
 	}
 	
+	public static int pedirIdReserva() {
+		
+		return 0;
+	}
+	
 }
