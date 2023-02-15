@@ -100,9 +100,14 @@ public class FormularioDatos {
 		return reserva;
 	}
 	
-	public static int pedirIdReserva() {
+	public static int pedirIdReserva(Scanner scan) {
 		
-		return 0;
+		int idReserva;
+		
+		Visor.mostrarMensaje("Introduce el ID de la reserva a eliminar");
+		idReserva = Integer.parseInt(scan.nextLine());
+		
+		return idReserva;
 	}
 	
 }

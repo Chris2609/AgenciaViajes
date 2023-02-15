@@ -1,5 +1,6 @@
 package GestorViajes;
 
+import java.text.Normalizer.Form;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,6 +22,7 @@ public class GestorReservas {
 				String dniC = FormularioDatos.pedirDniCliente(scan);
 				GestorBBDD comprobar = new GestorBBDD();
 				ArrayList dnisbbdd = comprobar.comprobarDNI();
+				
 				boolean existe = dnisbbdd.contains(dniC);
 				if (existe == true) {
 					System.out.println("\nEl cliente existe, continuando...\n");
@@ -42,8 +44,11 @@ public class GestorReservas {
 			
 			case Menu.ANULAR_RESERVA:
 				
+				int idR = FormularioDatos.pedirIdReserva(scan);
+				GestorBBDD elimRese = new GestorBBDD();
+				elimRese.eliminarReserva(idR);
 				
-				
+				Visor.mostrarMensaje("\nReserva eliminada\n");
 				break;
 			
 			case Menu.SALIR:

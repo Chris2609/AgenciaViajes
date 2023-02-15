@@ -180,4 +180,47 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 	}
+	
+	public void eliminarReserva(int id) {
+		
+		con.conectar();
+		
+		try {
+			PreparedStatement elimReserv = con.getConexion().prepareStatement("DELETE FROM reservas WHERE id = ?");
+			elimReserv.setInt(1, id);
+			elimReserv.execute();
+			con.cerrarConexion();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public ArrayList<Cliente> clientes(){
+		
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		con.conectar();
+		try {
+			PreparedStatement verC = con.getConexion().prepareStatement("SELECT * FROM clientes");
+			verC.execute();
+			ResultSet resultado = verC.executeQuery();
+			
+			
+			while(resultado.next()) {
+				
+				Cliente cliente = new Cliente();
+				cliente.setDni(resultado.getString("dni"));
+				cliente.setNombre(resultado.getString("nombre"));
+				cliente.setApellido(resultado.getString("apellidos"));
+				cliente.setDireccion(resultado.getString("direccion"));
+				cliente.setLocalidad(resultado.getString("localidad"));
+				
+				clientes.add(cliente);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			return clientes;
+	}
+	
 }
