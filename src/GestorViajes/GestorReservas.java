@@ -49,8 +49,9 @@ public class GestorReservas {
 				elimRese.eliminarReserva(idR);
 				
 				Visor.mostrarMensaje("\nReserva eliminada\n");
-				break;
-			
+				
+			break;
+				
 			case Menu.SALIR:
 				
 				Visor.mostrarMensaje("\nVolviendo...\n");

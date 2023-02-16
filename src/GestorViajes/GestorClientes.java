@@ -1,6 +1,7 @@
 package GestorViajes;
 
 import java.text.Normalizer.Form;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GestorClientes {
@@ -44,6 +45,29 @@ public class GestorClientes {
 				
 				Visor.mostrarMensaje("\nCliente modificado\n");
 				
+				break;
+			
+			case Menu.MOSTRAR_CLIENTESAPE:
+				
+				GestorBBDD clientesApe = new GestorBBDD();
+				ArrayList<Cliente> clientesA = clientesApe.clientes();
+				Visor.clientesApellido(clientesA);
+								
+				break;
+				
+			case Menu.MOSTRAR_CLIENTESNOM:
+				
+				GestorBBDD clientesNom = new GestorBBDD();
+				ArrayList<Cliente> clientesN = clientesNom.clientes();
+				Visor.clientesNombre(clientesN);
+				
+				break;
+				
+			case Menu.MOSTRAR_CLIENTECON:
+				
+				GestorBBDD clientesCon = new GestorBBDD();
+				ArrayList<Cliente> clientesCont = clientesCon.clientes();
+				Visor.clientesConti(clientesCont, scan);
 				break;
 				
 			case Menu.SALIR:

@@ -13,13 +13,16 @@ public class Menu {
 	public static final int GESTIONAR_HOTEL = 3;
 
 	public static void menuGestionClientes() {
-		System.out.println("1. Insertar cliente\n2. Baja cliente\n3. Modificación cliente\n0. Salir");
+		System.out.println("1. Insertar cliente\n2. Baja cliente\n3. Modificación cliente\n4. Mostrar Clientes (Alf. apellido)\n5. Mostrar Clientes (Alf. nombre)\n6. Mostrar Clientes (Contienen)\n0. Salir");
 	}
 	
 	public static final int INSERTAR_CLIENTE = 1;
 	public static final int BAJA_CLIENTE = 2;
 	public static final int MODIFICAR_CLIENTE = 3;
-	
+	public static final int MOSTRAR_CLIENTESAPE = 4;
+	public static final int MOSTRAR_CLIENTESNOM = 5;
+	public static final int MOSTRAR_CLIENTECON = 6;
+
 	public static void menuGestorResevas() {
 		System.out.println("1. Realizar reserva\n2. Anular reserva\n0. Salir");
 	}
