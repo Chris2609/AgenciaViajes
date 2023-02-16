@@ -224,4 +224,30 @@ public class GestorBBDD {
 			return clientes;
 	}
 	
+	public ArrayList<Reserva> reservas(){
+		con.conectar();
+		ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+		try {
+			PreparedStatement verR = con.getConexion().prepareStatement("SELECT * FROM reservas");
+			verR.execute();
+			
+			ResultSet resultado = verR.executeQuery();
+			
+			while(resultado.next()) {
+				Reserva reserva = new Reserva();
+				reserva.setId(resultado.getInt("dni"));
+				reserva.setId_habitacion(resultado.getInt("id_habitacion"));
+				reserva.setDni(resultado.getString("dni"));
+				reserva.setDesde(resultado.getDate("desde"));
+				reserva.setHasta(resultado.getDate("hasta"));
+				
+				reservas.add(reserva);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}				
+		return reservas;
+	}
+	
 }
