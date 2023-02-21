@@ -51,6 +51,23 @@ public class GestorReservas {
 				Visor.mostrarMensaje("\nReserva eliminada\n");
 				
 			break;
+			
+			case Menu.CONSULTAR_RESERVAS_FECHAS:
+				
+				GestorBBDD reservas = new GestorBBDD();
+				ArrayList<Reserva> reservasMostrar = reservas.reservas();
+				Visor.reservasEntreFechas(reservasMostrar, scan);
+				
+				break;
+				
+			case Menu.CONSULTAR_RESERVAS_CLIENTE:
+				
+				GestorBBDD reservasC = new GestorBBDD();
+				ArrayList<Reserva> reservasCMostrar = reservasC.reservas();
+				
+				Visor.reservasCliente(reservasCMostrar, scan);
+				
+				break;
 				
 			case Menu.SALIR:
 				
